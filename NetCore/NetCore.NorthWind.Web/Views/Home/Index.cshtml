@@ -1,0 +1,16 @@
+@model IEnumerable<User>
+@{    
+    // Layout = "_Layout";
+    var users = @Model.ToList();
+    var userCount = users.Count;
+}
+
+<div>
+    <h1>Hello World</h1>
+    <p>I have a list of @userCount users :</p>
+    @foreach (var user in users)
+    {
+        @Html.Partial("_UserInfo", user);
+    }
+</div>
+

@@ -1,0 +1,12 @@
+@model IEnumerable<Customers>
+@{        
+    var customers = @Model.ToList();    
+}
+
+<div>    
+    @foreach (var customer in customers)
+    {
+        <h3>@customer.CompanyName</h3>
+    }
+</div>
+

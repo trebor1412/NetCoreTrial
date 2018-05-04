@@ -1,0 +1,12 @@
+NetCore/NetCore.Model/obj/Debug/
+NetCore/NetCore.Model/bin/Debug/
+NetCore/NetCore.Web/bin/Debug/
+NetCore/NetCore.Web/obj/Debug/
+NetCore/NetCore.Model/obj/
+NetCore/NetCore.Web/obj/
+NetCore/NetCore.Repository/bin/
+NetCore/NetCore.Repository/obj/
+NetCore/NetCore.Northwind.Repository/bin/
+NetCore/NetCore.Northwind.Repository/obj/
+NetCore/NetCore.NorthWind.Web/obj/
+NetCore/NetCore.NorthWind.Web/bin/
