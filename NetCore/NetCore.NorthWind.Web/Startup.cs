@@ -25,6 +25,7 @@ namespace NetCore.NorthWind.Web {
             services.AddDbContext<NorthWindContext> (options => {
                 options.UseSqlServer (_config.GetConnectionString ("NorthWind"));
             });
+            services.AddScoped<ICustomerRepository, CustomerRepository>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

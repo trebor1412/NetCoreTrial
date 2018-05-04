@@ -1,18 +1,17 @@
 {
-   // Use IntelliSense to find out which attributes exist for C# debugging
-   // Use hover for the description of the existing attributes
-   // For further information visit https://github.com/OmniSharp/omnisharp-vscode/blob/master/debugger-launchjson.md
-   "version": "0.2.0",
-   "configurations": [
+    // 使用 IntelliSense 以得知可用的屬性。
+    // 暫留以檢視現有屬性的描述。
+    // 如需詳細資訊，請瀏覽: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [        
         {
             "name": ".NET Core Launch (web)",
             "type": "coreclr",
             "request": "launch",
             "preLaunchTask": "build",
-            // If you have changed target frameworks, make sure to update the program path.
-            "program": "${workspaceFolder}/NetCore.Web/bin/Debug/netcoreapp2.0/NetCore.Web.dll",
+            "program": "${workspaceFolder}/NetCore.NorthWind.Web/bin/Debug/netcoreapp2.0/NetCore.NorthWind.Web.dll",
             "args": [],
-            "cwd": "${workspaceFolder}/NetCore.Web",
+            "cwd": "${workspaceFolder}/NetCore.NorthWind.Web",
             "stopAtEntry": false,
             "internalConsoleOptions": "openOnSessionStart",
             "launchBrowser": {

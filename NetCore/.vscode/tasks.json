@@ -7,17 +7,7 @@
             "type": "process",
             "args": [
                 "build",
-                "${workspaceFolder}/NetCore.Web/NetCore.Web.csproj"
-            ],
-            "problemMatcher": "$msCompile"
-        },
-        {
-            "label": "build",
-            "command": "dotnet",
-            "type": "process",
-            "args": [
-                "build",
-                "${workspaceFolder}/NetCore.Web/NetCore.Web.csproj"
+                "${workspaceFolder}/NetCore.NorthWind.Web/NetCore.NorthWind.Web.csproj"
             ],
             "problemMatcher": "$msCompile"
         }
