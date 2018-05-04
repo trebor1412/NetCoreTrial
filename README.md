@@ -1,0 +1,1 @@
+# A trial .Net Core 2.0 MVC Project using VS Code
