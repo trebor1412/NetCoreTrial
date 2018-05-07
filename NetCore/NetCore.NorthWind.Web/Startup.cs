@@ -9,6 +9,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using NetCore.NorthWind.Repository;
+using Elmah.Io.AspNetCore;
 
 namespace NetCore.NorthWind.Web {
     public class Startup {
@@ -26,6 +27,11 @@ namespace NetCore.NorthWind.Web {
                 options.UseSqlServer (_config.GetConnectionString ("NorthWind"));
             });
             services.AddScoped<ICustomerRepository, CustomerRepository>();
+
+            services.AddElmahIo(o =>{
+                o.ApiKey = "2f73f2df9f5c4c1781998307d74588ec";
+                o.LogId = new Guid("978f31cb-3f82-43f0-be37-50ff0c4c3e6e");
+            });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -33,9 +39,9 @@ namespace NetCore.NorthWind.Web {
             if (env.IsDevelopment ()) {
                 app.UseDeveloperExceptionPage ();
             }
-
+            app.UseElmahIo();
             app.UseMvcWithDefaultRoute ();
-            app.UseStaticFiles ();
+            app.UseStaticFiles ();            
         }
     }
 }
