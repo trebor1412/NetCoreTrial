@@ -2,7 +2,7 @@ using NetCore.Repository;
 
 namespace NetCore.NorthWind.Repository
 {
-    public interface ICustomerRepository: IRepository<NorthWindContext, Customers>
+    public interface ICustomerRepository: INorthWindRepositoryBase<Customers>
     {
         
     }
