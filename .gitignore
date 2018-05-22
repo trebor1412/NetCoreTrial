@@ -10,3 +10,5 @@ NetCore/NetCore.Northwind.Repository/bin/
 NetCore/NetCore.Northwind.Repository/obj/
 NetCore/NetCore.NorthWind.Web/obj/
 NetCore/NetCore.NorthWind.Web/bin/
+NetCore/NetCore.NorthWind.Service/bin/
+NetCore/NetCore.NorthWind.Service/obj/

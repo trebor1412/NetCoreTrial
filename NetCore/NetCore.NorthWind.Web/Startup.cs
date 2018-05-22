@@ -9,6 +9,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using NetCore.NorthWind.Repository;
+using NetCore.NorthWind.Service;
 using Elmah.Io.AspNetCore;
 
 namespace NetCore.NorthWind.Web {
@@ -27,6 +28,8 @@ namespace NetCore.NorthWind.Web {
                 options.UseSqlServer (_config.GetConnectionString ("NorthWind"));
             });
             services.AddScoped<ICustomerRepository, CustomerRepository>();
+            services.AddScoped<IOrderRepository, OrderRepository>();
+            services.AddScoped<IOrderService, OrderService>();
 
             services.AddElmahIo(o =>{
                 o.ApiKey = "2f73f2df9f5c4c1781998307d74588ec";

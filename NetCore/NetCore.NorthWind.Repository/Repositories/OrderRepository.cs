@@ -8,8 +8,8 @@ namespace NetCore.NorthWind.Repository {
 
         }
 
-        public IQueryable<Orders> GetOrderListByCustomer(string customerID){
-            return GetAll().Where(x => x.CustomerId == customerID);
+        public IQueryable<Orders> GetOrderListByCustomer(string customerId){
+            return GetAll().Where(x => x.CustomerId == customerId);
         }
 
         public IQueryable<Orders> GetOrderListByShipCountry(string shipCountry){
