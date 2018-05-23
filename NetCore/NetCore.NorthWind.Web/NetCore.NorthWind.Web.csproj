@@ -15,6 +15,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\NetCore.Core\NetCore.Core.csproj" />
     <ProjectReference Include="..\NetCore.NorthWind.Repository\NetCore.NorthWind.Repository.csproj" />
     <ProjectReference Include="..\NetCore.NorthWind.Service\NetCore.NorthWind.Service.csproj" />
   </ItemGroup>

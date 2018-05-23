@@ -10,6 +10,6 @@ namespace NetCore.NorthWind.Repository
 
         IQueryable<Orders> GetOrderListByShipCountry(string shipCountry);
 
-        IQueryable<Orders> GetOrderListByTimeRange(DateTime from, DateTime to);
+        IQueryable<Orders> GetOrderListByOrderTime(DateTime from, DateTime to);
     }
 }
