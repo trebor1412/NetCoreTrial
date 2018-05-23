@@ -3,10 +3,12 @@
     var customers = @Model.ToList();    
 }
 
-<div>    
+<div class="row">
+    <div class="col-8 offset-col-2">
     @foreach (var customer in customers)
     {
         <h3>@customer.CompanyName</h3>
     }
+    </div>
 </div>
 

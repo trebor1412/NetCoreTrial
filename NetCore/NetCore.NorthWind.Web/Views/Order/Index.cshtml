@@ -1,0 +1,28 @@
+@model OrderListViewModel
+
+<div class="row">
+    <div class="col-10 offset-1">
+        <table class="table table-hover">
+            <thead class="thead-dark">
+                <th scope="col">@Html.DisplayNameFor(x => x.Orders.First().OrderId)</th>
+                <th scope="col">@Html.DisplayNameFor(x => x.Orders.First().CustomerName)</th>
+                <th scope="col">@Html.DisplayNameFor(x => x.Orders.First().OrderedDate)</th>
+                <th scope="col">@Html.DisplayNameFor(x => x.Orders.First().RequiredShipDate)</th>
+                <th scope="col">@Html.DisplayNameFor(x => x.Orders.First().DepartureShipDate)</th>
+                <th scope="col">@Html.DisplayNameFor(x => x.Orders.First().Shipper)</th>
+            </thead>
+            <tbody>
+                @foreach (var order in Model.Orders) {
+                <tr>
+                    <td>@order.OrderId</td>
+                    <td>@order.CustomerName</td>
+                    <td>@order.OrderedDate</td>
+                    <td>@order.RequiredShipDate</td>
+                    <td>@order.DepartureShipDate</td>
+                    <td>@order.Shipper</td>
+                </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>

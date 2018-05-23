@@ -1,6 +1,6 @@
 using System.Collections.Generic;
 
-namespace NetCore.NorthWind.Service.ViewModels
+namespace NetCore.NorthWind.Service
 {
     public class OrderListViewModel
     {

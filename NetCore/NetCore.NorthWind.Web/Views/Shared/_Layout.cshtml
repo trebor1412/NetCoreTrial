@@ -2,14 +2,14 @@
 <html>
 <head>
     <title>@ViewBag.Title</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css">
     @RenderSection("styles", required: false)
 </head>
 <body>
     <header>
         Layout Header
     </header>
-    <div>
-        <h1>@ViewBag.Title</h1>
+    <div class="container-fluid">        
         @RenderBody()
     </div>
     <footer>

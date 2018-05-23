@@ -13,9 +13,11 @@ namespace NetCore.NorthWind.Web
 
         private IOrderService orderService { get; }
 
-        public JsonResult Index(){
-            var orders = orderService.GetOrderListByCustomer("GREAL");
-            return Json(orders);
+        public IActionResult Index(){            
+            var viewModel = new OrderListViewModel{
+                Orders = orderService.GetOrderListByCustomer("GREAL").ToList()
+            };
+            return View(viewModel);            
         }
     }
 }
