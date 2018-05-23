@@ -1,5 +1,5 @@
 {
   "ConnectionStrings": {
-    "NorthWind": "Server=.\\SQLEXPRESS;Database=NorthWind;User ID=dev;Password=sa;Trusted_Connection=True;"
+    "NorthWind": "Server=127.0.0.1;Database=NorthWind;User ID=sa;Password=Hk3345678;"
   }
 }
