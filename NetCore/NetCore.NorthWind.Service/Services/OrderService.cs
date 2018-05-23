@@ -2,15 +2,20 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using NetCore.NorthWind.Repository;
+using AutoMapper;
+using Microsoft.EntityFrameworkCore;
 
 namespace NetCore.NorthWind.Service {
     
     public class OrderService : IOrderService {
-        public OrderService (IOrderRepository orderRepository) {
+        public OrderService (IOrderRepository orderRepository, IMapper mapper) {
             this.orderRepository = orderRepository;
+            this.mapper = mapper;
         }
 
         private IOrderRepository orderRepository { get; }
+
+        private IMapper mapper { get; }
 
         private DateTime Now {
             get{
@@ -20,21 +25,20 @@ namespace NetCore.NorthWind.Service {
 
         public IList<OrderListItemViewModel> GetOrderListByCustomer (string customerId) {
             var orders = orderRepository.GetOrderListByCustomer(customerId)
-                                        .Select(x => new OrderListItemViewModel {
-                                            OrderId = x.OrderId,
-                                            CustomerId = x.CustomerId,
-                                            CustomerName = x.Customer.CompanyName,
-                                            OrderDate = x.OrderDate ?? Now,
-                                            RequireDate = x.RequiredDate ?? Now,
-                                            ShippedDate = x.ShippedDate,
-                                            Shipper = x.ShipViaNavigation.CompanyName
-                                        })
+                                        .Include(x => x.Customer)
+                                        .Include(x => x.ShipViaNavigation)
+                                        .Select(x => mapper.Map<OrderListItemViewModel>(x))
                                         .ToList();
             return orders;                                        
         }
 
         public IList<OrderListItemViewModel> GetOrderListByOrderDate(DateTime from, DateTime to){
-            return null;
+            var orders = orderRepository.GetOrderListByOrderTime(from, to)
+                                        .Include(x => x.Customer)
+                                        .Include(x => x.ShipViaNavigation)
+                                        .Select(x => mapper.Map<OrderListItemViewModel>(x))
+                                        .ToList();
+            return orders;
         }
     }
 }

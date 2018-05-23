@@ -12,15 +12,23 @@
                 <th scope="col">@Html.DisplayNameFor(x => x.Orders.First().Shipper)</th>
             </thead>
             <tbody>
-                @foreach (var order in Model.Orders) {
-                <tr>
-                    <td>@order.OrderId</td>
-                    <td>@order.CustomerName</td>
-                    <td>@order.OrderedDate</td>
-                    <td>@order.RequiredShipDate</td>
-                    <td>@order.DepartureShipDate</td>
-                    <td>@order.Shipper</td>
-                </tr>
+                @if (Model.Orders.Any()){ 
+                    foreach (var order in Model.Orders) {
+                    <tr>
+                        <td>@order.OrderId</td>
+                        <td>@order.CustomerName</td>
+                        <td>@order.OrderedDate</td>
+                        <td>@order.RequiredShipDate</td>
+                        <td>@order.DepartureShipDate</td>
+                        <td>@order.Shipper</td>
+                    </tr>
+                    } 
+                } else{
+                    <tr>
+                        <td align="center" colspan="6">
+                            No orders found.
+                        </td>
+                    </tr>
                 }
             </tbody>
         </table>

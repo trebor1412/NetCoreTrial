@@ -6,7 +6,7 @@ namespace NetCore.Core {
 
         public DateTime To { get; set; }
 
-        public static TimeInterval Interval (TimeIntervalEnum interval, int range) {
+        public static TimeInterval Interval (TimeIntervalEnum interval, int range = 0) {
             var now = DateTime.Now;
             TimeInterval timeInterval = new TimeInterval { };
             switch (interval) {
