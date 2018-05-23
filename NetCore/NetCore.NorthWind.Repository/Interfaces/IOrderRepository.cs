@@ -1,5 +1,6 @@
 using NetCore.Repository;
 using System.Linq;
+using System;
 
 namespace NetCore.NorthWind.Repository
 {    
@@ -8,5 +9,7 @@ namespace NetCore.NorthWind.Repository
         IQueryable<Orders> GetOrderListByCustomer(string customerId);
 
         IQueryable<Orders> GetOrderListByShipCountry(string shipCountry);
+
+        IQueryable<Orders> GetOrderListByTimeRange(DateTime from, DateTime to);
     }
 }

@@ -4,6 +4,7 @@ using System.Linq;
 using NetCore.NorthWind.Repository;
 
 namespace NetCore.NorthWind.Service {
+    
     public class OrderService : IOrderService {
         public OrderService (IOrderRepository orderRepository) {
             this.orderRepository = orderRepository;
@@ -30,6 +31,10 @@ namespace NetCore.NorthWind.Service {
                                         })
                                         .ToList();
             return orders;                                        
+        }
+
+        public IList<OrderListItemViewModel> GetOrderListByOrderDate(DateTime from, DateTime to){
+            return null;
         }
     }
 }
