@@ -37,6 +37,7 @@ namespace NetCore.NorthWind.Service {
                                         .Include(x => x.Customer)
                                         .Include(x => x.ShipViaNavigation)
                                         .Select(x => mapper.Map<OrderListItemViewModel>(x))
+                                        .OrderBy(x => x.OrderDate)
                                         .ToList();
             return orders;
         }

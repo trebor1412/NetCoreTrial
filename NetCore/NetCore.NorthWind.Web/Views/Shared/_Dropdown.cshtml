@@ -1,0 +1,11 @@
+@model DropdownListViewModel
+
+<div class="dropdown">
+    <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    @Model.Title
+  </button>
+    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+        @foreach (var item in Model.Items) {
+        <a class="dropdown-item" href="@Url.Content(item.Link)">@item.Title</a> }
+    </div>
+</div>

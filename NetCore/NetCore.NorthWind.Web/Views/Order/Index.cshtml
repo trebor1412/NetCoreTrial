@@ -1,8 +1,32 @@
-@model OrderListViewModel
+@model OrderListViewModel 
+@{
+    var hasRows = Model.Orders.Any();
+    var tableClass = hasRows ? "table table-hover" : "table";
+}
+@section styles{
+<style>
+    .dropdown {
+        padding-right: 15px;
+        padding-left: 15px;
+    }
 
+    .row.function {
+        padding-top: 15px;
+        padding-bottom: 15px;
+    }
+</style>
+}
+
+<div class="row function">
+    <div class="col-10 offset-1">
+        <div class="row justify-content-end">
+            @Html.Partial("_Dropdown", Model.Dropdown)
+        </div>
+    </div>
+</div>
 <div class="row">
     <div class="col-10 offset-1">
-        <table class="table table-hover">
+        <table class="@tableClass">
             <thead class="thead-dark">
                 <th scope="col">@Html.DisplayNameFor(x => x.Orders.First().OrderId)</th>
                 <th scope="col">@Html.DisplayNameFor(x => x.Orders.First().CustomerName)</th>
@@ -12,8 +36,8 @@
                 <th scope="col">@Html.DisplayNameFor(x => x.Orders.First().Shipper)</th>
             </thead>
             <tbody>
-                @if (Model.Orders.Any()){ 
-                    foreach (var order in Model.Orders) {
+                @if (hasRows){
+                     foreach (var order in Model.Orders) {
                     <tr>
                         <td>@order.OrderId</td>
                         <td>@order.CustomerName</td>
@@ -24,11 +48,11 @@
                     </tr>
                     } 
                 } else{
-                    <tr>
-                        <td align="center" colspan="6">
-                            No orders found.
-                        </td>
-                    </tr>
+                <tr>
+                    <td align="center" colspan="6">
+                        No orders found.
+                    </td>
+                </tr>
                 }
             </tbody>
         </table>
